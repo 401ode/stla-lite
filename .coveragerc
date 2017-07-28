@@ -1,0 +1,5 @@
+[run]
+include = stla_lite/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
