@@ -1,7 +1,11 @@
 STLA Lite
 =========
 
+<<<<<<< HEAD
 Lightweight timesheet system for State employees.
+=======
+A light timesheet application for State work er use.
+>>>>>>> e0d54dc70819b8d485d15beada001836c1e9c6ce
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/

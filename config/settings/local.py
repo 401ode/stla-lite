@@ -20,7 +20,11 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
+<<<<<<< HEAD
 SECRET_KEY = env('DJANGO_SECRET_KEY', default='t.@D0:51^ktEyi57kb#A<1Y2UavRo%ifPNqVg}S*a15qk&.s&4')
+=======
+SECRET_KEY = env('DJANGO_SECRET_KEY', default='nIkwOVQU!BL!W}a^ed1gy<J)WwvA*e2EoW$Sj=pr*|)5Yde$77')
+>>>>>>> e0d54dc70819b8d485d15beada001836c1e9c6ce
 
 # Mail settings
 # ------------------------------------------------------------------------------
@@ -65,4 +69,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Your local stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['192.168.33.121']
+=======
+>>>>>>> e0d54dc70819b8d485d15beada001836c1e9c6ce

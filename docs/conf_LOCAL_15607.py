@@ -230,11 +230,7 @@ man_pages = [
 texinfo_documents = [
     ('index', 'stla_lite', 'STLA Lite Documentation',
      """Brian J. McGuirk""", 'STLA Lite',
-<<<<<<< HEAD
      """Lightweight timesheet system for State employees.""", 'Miscellaneous'),
-=======
-     """A light timesheet application for State work er use.""", 'Miscellaneous'),
->>>>>>> e0d54dc70819b8d485d15beada001836c1e9c6ce
 ]
 
 # Documents to append as an appendix to all manuals.
