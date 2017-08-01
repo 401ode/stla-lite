@@ -15,8 +15,8 @@ framework.
 """
 import os
 import sys
-
 from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
 
 # This allows easy placement of apps within the interior
 # stla_lite directory.
@@ -38,6 +38,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.production")
 application = get_wsgi_application()
 if os.environ.get('DJANGO_SETTINGS_MODULE') == 'config.settings.production':
     application = Sentry(application)
+    # Brian's custom config here for deployment on Heroku: 
+    application = DjangoWhiteNoise(application)
 # Apply WSGI middleware here.
 # from helloworld.wsgi import HelloWorldApplication
 # application = HelloWorldApplication(application)
