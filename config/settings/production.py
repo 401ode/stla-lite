@@ -10,10 +10,10 @@ Production Configurations
 
 """
 
-from boto.s3.connection import OrdinaryCallingFormat
+# from boto.s3.connection import OrdinaryCallingFormat
 
 import logging
-
+import os
 
 from .base import *  # noqa
 
@@ -100,9 +100,16 @@ INSTALLED_APPS += ['gunicorn', ]
 
 # Static Assets
 # ------------------------
+
+# # From Heroku Django configuration - explicitly part of debugging that I'm adding this.
+# See https://devcenter.heroku.com/articles/django-assets for more.
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-
 
 # EMAIL
 # ------------------------------------------------------------------------------
