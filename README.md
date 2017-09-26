@@ -4,7 +4,7 @@ STLA Lite
 Lightweight timesheet system for State (or whomever) employees.
 
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg)](https://github.com/pydanny/cookiecutter-django/)
-
+[![Known Vulnerabilities](https://snyk.io/test/github/401ode/stla-lite/badge.svg)](https://snyk.io/test/github/401ode/stla-lite)
 
 **License:** MIT
 
@@ -23,6 +23,7 @@ Lightweight timesheet system for State (or whomever) employees.
 		- Job Titles
 		- Classification
 		- Eligible for Overtime
+		- Employee ID Number
 	- Generated / Gathered:
 		- Usernames
 		    - Ideally SSO to Office 365/Google Apps, but that's far off.
