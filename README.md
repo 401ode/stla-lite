@@ -3,9 +3,8 @@ STLA Lite
 
 Lightweight timesheet system for State employees.
 
-[Built with Cookiecutter Django[alt-text][cookielogo]](https://github.com/pydanny/cookiecutter-django/)
+[![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg)](https://github.com/pydanny/cookiecutter-django/)
 
-[cookielogo]: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg "Built with CookieCutter Django"
 
 **License:** MIT
 
