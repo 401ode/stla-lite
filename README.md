@@ -1,25 +1,67 @@
 STLA Lite
 =========
 
-
 Lightweight timesheet system for State employees.
 
-.. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
-     :target: https://github.com/pydanny/cookiecutter-django/
-     :alt: Built with Cookiecutter Django
+[Built with Cookiecutter Django[alt-text][cookielogo]](https://github.com/pydanny/cookiecutter-django/)
 
+[cookielogo]: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg "Built with CookieCutter Django"
 
 **License:** MIT
 
-# Objects
+# Goals
 
-- Users / Employees: 
+- An easy-to-use Timesheet entry system for employees, including the ability to allot hours spent on a project to a particular Grant Award and Grant Award Task/Service Area. 
+- A back-end that makes it easy for managers to make 
+
+
+
+# High-Level Object Design
+
+- Users / Employees:
+	- Initial Import from Payroll System of:
+		- Names
+		- Job Titles
+		- Classification
+		- Eligible for Overtime
+	- Generated / Gathered:
+		- Usernames
+		- Supervisor (Hierarchical)
+		- Emergency Contact
+		- Physical Working Location (Emergency Purposes)
 - Timesheets: 
-	- Hours:
-- Allocations: 
-- Grant Award: 
-- Grant Award Task: 
-- 
+	- Hours - Categorized:
+		- Normal working
+		- Exception: 
+			- Vacation
+			- Sick
+			- Personal
+			- Bereavement
+			- Holiday (which we should know in advance) 
+			- Jury Duty
+			- Workers Compensation
+			- Union Duties
+			- Training, Conference, or Seminar
+			- Other
+	- For employees eligible for Overtime, calculation of overtime hours.
+	- Approval by Supervisor
+		- Timestamped
+		- Upon approval, timesheet data eligible for export
+- Allocations:
+	- Grant Award: 
+	- Grant Award Task: 
+- Pay Period: The two-week cycle
+- Agency:
+- Cost Center:
+- Lookback:
+	- 90 day retrospective analysis of actual hours worked on a particular grant as a proportion of 100% of total worked hours, in order to properly allot exception hours to those grants proportionally. 
+	- Running average calculated at time of timesheet entry.
+- Reminders (via Mailgun):
+	- Employees - Input your time.
+	- Managers - Approve timesheets.
+- Export Files for:
+	- Payroll Systems
+	- ERPs (specifically Oracle E-Business Suite)
 
 
 # Settings
@@ -33,7 +75,7 @@ Moved to [settings at Django Cookiecutter](http://cookiecutter-django.readthedoc
 
 - To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it, you'll see a "Verify Your E-mail Address" page. Go to your console to see a simulated email verification message. Copy the link into your browser. Now the user's email should be verified and ready to go.
 
-- To create an **superuser account**, use this command::
+- To create an **superuser account**, use this command:
 
     $ python manage.py createsuperuser
 
