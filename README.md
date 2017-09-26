@@ -46,20 +46,23 @@ Lightweight timesheet system for State employees.
 	- Approval by Supervisor
 		- Timestamped
 		- Upon approval, timesheet data eligible for export
+	- Lookback:
+	    - 90 day retrospective analysis of actual hours worked on a particular grant as a proportion of 100% of total worked hours, in order to properly allot exception hours to those grants proportionally. 
+	    - Running average calculated at time of timesheet entry.
 - Allocations:
 	- Grant Award: 
 	- Grant Award Task: 
 - Pay Period: The two-week cycle
 - Agency:
-- Cost Center:
-- Lookback:
-	- 90 day retrospective analysis of actual hours worked on a particular grant as a proportion of 100% of total worked hours, in order to properly allot exception hours to those grants proportionally. 
-	- Running average calculated at time of timesheet entry.
+    - The Agency for whom the employee works.
+    - 
+    - Cost Center:
+        - Agencies have different "cost centers" across different divisions and functions. 
 - Reminders (via Mailgun):
 	- Employees - Input your time.
 	- Managers - Approve timesheets.
 - Export Files for:
-	- Payroll Systems
+	- Payroll Systems (specifically old-school Mainframes)
 	- ERPs (specifically Oracle E-Business Suite)
 
 
