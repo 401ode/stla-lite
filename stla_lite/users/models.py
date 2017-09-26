@@ -10,7 +10,15 @@ class User(AbstractUser):
 
     # First Name and Last Name do not cover name patterns
     # around the globe.
-    name = models.CharField(_('Name of User'), blank=True, max_length=255)
+    first_name = models.CharField(_('User First Name')
+    	, blank=False
+    	, max_length=255
+    	)
+    last_name = models.CharField(_('User Last Name')
+    	, blank=False
+    	, max_length=255
+    	)
+    
 
     def __str__(self):
         return self.username
