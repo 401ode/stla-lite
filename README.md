@@ -1,7 +1,7 @@
 STLA Lite
 =========
 
-Lightweight timesheet system for State employees.
+Lightweight timesheet system for State (or whomever) employees.
 
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg)](https://github.com/pydanny/cookiecutter-django/)
 
@@ -11,8 +11,8 @@ Lightweight timesheet system for State employees.
 # Goals
 
 - An easy-to-use Timesheet entry system for employees, including the ability to allot hours spent on a project to a particular Grant Award and Grant Award Task/Service Area. 
-- A back-end that makes it easy for managers to make 
-
+- A back-end that makes it easy for managers to set up and maintain standard allocations, monitor employee hours, approve timesheets, etc. 
+- Make a platform that is suited to the State of Rhode Island's needs, but easily adaptable to other states, municipalities, organizations, etc.
 
 
 # High-Level Object Design
@@ -25,9 +25,11 @@ Lightweight timesheet system for State employees.
 		- Eligible for Overtime
 	- Generated / Gathered:
 		- Usernames
-		- Supervisor (Hierarchical)
+		    - Ideally SSO to Office 365/Google Apps, but that's far off.
+		- Supervisor (Hierarchical, gains Admin permissions)
 		- Emergency Contact
 		- Physical Working Location (Emergency Purposes)
+		- Normal working hours (if applicable)
 - Timesheets: 
 	- Hours - Categorized:
 		- Normal working
@@ -46,24 +48,32 @@ Lightweight timesheet system for State employees.
 	- Approval by Supervisor
 		- Timestamped
 		- Upon approval, timesheet data eligible for export
+		- Ideally, summary dashboard with employee timesheet data, exception hours, etc. 
 	- Lookback:
 	    - 90 day retrospective analysis of actual hours worked on a particular grant as a proportion of 100% of total worked hours, in order to properly allot exception hours to those grants proportionally. 
-	    - Running average calculated at time of timesheet entry.
+	    - Running average calculated at time of timesheet entry
 - Allocations:
-	- Grant Award: 
-	- Grant Award Task: 
-- Pay Period: The two-week cycle
+	- Grant Award - If an employee is doing work related to a Federal or other grant, the name/ID of the grant in question. 
+	- Grant Award Task - The Grant Task (or Service Area) the employee was working on. 
+- Pay Period: The two-week cycle in which employees are paid.
 - Agency:
     - The Agency for whom the employee works.
-    - 
+    - The accounting system Agency Code corresponding to this Agency.
     - Cost Center:
         - Agencies have different "cost centers" across different divisions and functions. 
+    - Additional fields necessary? Facilities list? 
 - Reminders (via Mailgun):
 	- Employees - Input your time.
 	- Managers - Approve timesheets.
 - Export Files for:
 	- Payroll Systems (specifically old-school Mainframes)
 	- ERPs (specifically Oracle E-Business Suite)
+
+### Roadmap Features
+- Request for Time Off
+    - Subject to Supervisor Approval Process
+- API: 
+        - Establish a standard timesheet POST API for devices like timeclocks, punch-card systems, barcode readers, etc.
 
 
 # Settings

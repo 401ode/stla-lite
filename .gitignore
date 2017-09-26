@@ -76,3 +76,7 @@ staticfiles/
 
 .cache/
 
+# Should any project documents end up in this directory,
+# they should not be published to Git.
+*.xls
+*.xlsx
