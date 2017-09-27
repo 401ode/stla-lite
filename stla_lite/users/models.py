@@ -40,7 +40,6 @@ class Employee(User):
         )
     employee_id_number = models.IntegerField(_('Employee ID Number')
         , unique=True
-        , max_length=50
         )
     supervisor_id = models.ForeignKey(
         'Supervisor'

@@ -6,8 +6,8 @@ class UsersConfig(AppConfig):
     verbose_name = "Users"
 
     def ready(self):
-        """Override this to put in:
-            Users system checks
-            Users signal registration
+        """
+        TODO: Check to see if Employee ID number in database.
+        Check to see if supervisor email in database.
         """
         pass
