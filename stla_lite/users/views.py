@@ -3,7 +3,7 @@ from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .models import User
+from .models import User, Employee
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
