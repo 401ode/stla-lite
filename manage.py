@@ -2,10 +2,15 @@
 import os
 import sys
 
+
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.local')
-
+    
     try:
+        import django.core.management.commands.runserver as runserver
+        HOST = os.getenv('IP', default='0.0.0.0')
+        PORT = os.getenv('PORT', default='8080')
+        runserver.default_port = "{}:{}".format(HOST, PORT)
         from django.core.management import execute_from_command_line
     except ImportError:
         # The above import may fail for some other reason. Ensure that the

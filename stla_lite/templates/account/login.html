@@ -33,15 +33,35 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 <p>{% blocktrans %}If you have not created an account yet, then please
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
-
-<form class="login" method="POST" action="{% url 'account_login' %}">
+<form class="usa-form" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
   {{ form|crispy }}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction btn btn-primary" type="submit">{% trans "Sign In" %}</button>
+  <fieldset>
+    <legend class="usa-drop_text">{% blocktrans %}Sign in</legend>
+    <span>or <a href="{{ signup_url }}">create an account</a></span>
+    {% endblocktrans %}
+
+    <label for="sign-in-username">{% trans 'Username or email address' %}</label>
+    <input id="sign-in-username" name="username" type="text" autocapitalize="off" autocorrect="off">
+
+    <label for="sign-in-password">{% trans 'Password' %}</label>
+    <input id="sign-in-password" name="password" type="password">
+    <p class="usa-form-note">
+      <a title="Show password" href="javascript:void(0);"
+          class="usa-show_password"
+          aria-controls="sign-in-password">
+        {% trans 'Show password' %}</a>
+    </p>
+
+    <input type="submit" value="{% trans 'Sign In' %}">
+
+    <p><a href="{% url 'account_reset_password' %}" title="{% trans 'Forgot password?' %}">
+      {% trans 'Forgot password?' %}</a></p>
+
+  </fieldset>
 </form>
 
 {% endblock %}

@@ -10,6 +10,8 @@ Local settings
 """
 
 from .base import *  # noqa
+import os
+import django.core.management.commands.runserver as runserver
 
 # DEBUG
 # ------------------------------------------------------------------------------
@@ -46,7 +48,7 @@ CACHES = {
 MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 INSTALLED_APPS += ['debug_toolbar', ]
 
-INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
+INTERNAL_IPS = ['0.0.0.0', '127.0.0.1', '10.0.2.2', ]
 
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': [
@@ -66,3 +68,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 # Your local stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
 ALLOWED_HOSTS = ['192.168.33.121','stla-lite-brianmcguirk.c9users.io']
+HOST = os.getenv('IP', default='0.0.0.0')
+PORT = os.getenv('PORT', default='8080')
+# runserver.default_port = "{}:{}".format(HOST, PORT)
+DEFAULT_PORT = "{}:{}".format(HOST, PORT)
