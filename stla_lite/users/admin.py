@@ -2,7 +2,7 @@ from django import forms
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
-from .models import User
+from .models import User, Employee, Supervisor
 
 
 class MyUserChangeForm(UserChangeForm):
@@ -37,3 +37,7 @@ class MyUserAdmin(AuthUserAdmin):
     ) + AuthUserAdmin.fieldsets
     list_display = ('username', 'first_name','last_name', 'is_superuser')
     search_fields = ['last_name']
+
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    pass

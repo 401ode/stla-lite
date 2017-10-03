@@ -34,10 +34,13 @@ class Employee(User):
         verbose_name='Employee ID Number'
         , unique=True
         )
-    supervisor_id = models.ForeignKey(
-        'Supervisor'
-        , on_delete=models.CASCADE
+    is_supervisor=models.BooleanField(
+        default=False
         )
+    is_hr_staff=models.BooleanField(
+        default=False
+        )
+    
     emergency_contact_name=models.CharField(
         verbose_name='Emergency Contact Name'
         , unique=False
@@ -81,15 +84,6 @@ class Employee(User):
         )
         
     # Need to think about where to keep track of lookback data.
-
-@python_2_unicode_compatible
-class Supervisor(Employee):
-    """
-    A Supervisor is an employee with special priveleges.
-    """
-    approver=True
-    
-@python_2_unicode_compatible
-class HR(Employee):
-    approver=True
-    hr_staff=True
+    class Meta:
+        verbose_name='Employee'
+        verbose_name_plural='Employees'

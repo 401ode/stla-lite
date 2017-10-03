@@ -141,3 +141,6 @@ class Activity(models.Model):
     last_modified_date=models.DateField(
         auto_now=True
         )
+        
+    class Meta:
+        verbose_name_plural='Activities'
