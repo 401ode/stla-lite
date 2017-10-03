@@ -12,15 +12,6 @@ class User(AbstractUser):
     
     Used heavily in admin section. 
     """
-    
-    first_name = models.CharField(_('First Name')
-    	, blank=False
-    	, max_length=255
-    	)
-    last_name = models.CharField(_('Last Name')
-    	, blank=False
-    	, max_length=255
-    	)
     	
     def __str__(self):
         return self.username
