@@ -18,7 +18,6 @@ class Agency(models.Model):
         
     agency_code=models.IntegerField(
         verbose_name='Agency Code' # RIFANS code.
-        , max_length=3
         , primary_key=True
         )
     
