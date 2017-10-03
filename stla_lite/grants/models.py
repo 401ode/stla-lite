@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 
-
 @python_2_unicode_compatible
 class GrantAward(models.Model):
     """
@@ -15,11 +14,11 @@ class GrantAward(models.Model):
     the standard GMS process.
     """
     grant_award_id=models.CharField(
-        ('Grant Award ID')
+        verbose_name='Grant Award ID'
 	    , primary_key=True
 	)
     grant_award_description=models.CharField(
-        ('Grant Award Description')
+        verbose_name='Grant Award Description'
     	, unique=False
     	, blank=True
     	)
@@ -44,14 +43,15 @@ class GrantAwardTask(models.Model):
     the standard GMS process.
     """
     grant_award_task_id=models.CharField(
-        ('Grant Award Task ID')
+        verbose_name='Grant Award Task ID'
     	, primary_key=True
     	)
-    grant_award_id=models.ForeignKey('Grant Award'
+    grant_award_id=models.ForeignKey(
+        GrantAward
         , on_delete=models.CASCADE
         )
     grant_award_task_description=models.CharField(
-        ('Grant Award Task Description')
+        verbose_name='Grant Award Task Description'
     	, unique=False
     	, blank=True
     	, max_length=100

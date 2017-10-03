@@ -83,5 +83,9 @@ class Supervisor(Employee):
     """
     A Supervisor is an employee with special priveleges.
     """
-    pass
+    approver=True
     
+@python_2_unicode_compatible
+class HR(Employee):
+    approver=True
+    hr_staff=True
