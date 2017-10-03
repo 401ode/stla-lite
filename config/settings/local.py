@@ -11,7 +11,7 @@ Local settings
 
 from .base import *  # noqa
 import os
-import django.core.management.commands.runserver as runserver
+
 
 # DEBUG
 # ------------------------------------------------------------------------------

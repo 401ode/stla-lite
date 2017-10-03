@@ -19,7 +19,7 @@ class User(AbstractUser):
     def get_absolute_url(self):
         return reverse('users:detail', kwargs={'username': self.username})
 
-
+@python_2_unicode_compatible
 class Employee(User):
     """
     An Employee is a sub-class of user. Even if said employee never logs into this system, they'll still have a user representation here.
@@ -36,6 +36,25 @@ class Employee(User):
         'Supervisor'
         , on_delete=models.CASCADE
         )
+    emergency_contact_name=models.CharField(_('Emergency Contact Name')
+        , unique=False
+        , blank=False
+        , max_length=100
+        )
+    emergency_contact_phone=models.CharField(_('Emergency Contact Number')
+        , unique=False
+        , blank=False
+        , max_length=15 # Should be more scientific
+                        # (i.e. 3-area code, 3-exchange,
+                        # 4-zone), but 20 is fine for now.
+        )
+    physical_working_location=models.CharField(_('Normal Physical Working Location')
+        """
+        Used to check for people during emergency situations.
+        """
+        , unique=False
+        , blank=False
+        , max_length=100)
     
     # Job Classification Designations
     COMPETITIVE = 'CC'
@@ -53,8 +72,13 @@ class Employee(User):
         max_length=2
         , default=NON_CLASSIFIED
         )
+    eligible_for_overtime=models.BooleanField(
+        default=False
+        )
+        
+    # Need to think about where to keep track of lookback data.
 
-
+@python_2_unicode_compatible
 class Supervisor(Employee):
     """
     A Supervisor is an employee with special priveleges.

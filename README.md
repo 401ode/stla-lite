@@ -27,7 +27,7 @@ Lightweight timesheet system for State (or whomever) employees.
 	- Generated / Gathered:
 		- Usernames
 		    - Ideally SSO to Office 365/Google Apps, but that's far off.
-		- Supervisor (Hierarchical, gains Admin permissions)
+		- Supervisor (Hierarchical, gains supervisor-admin permissions)
 		- Emergency Contact
 		- Physical Working Location (Emergency Purposes)
 		- Normal working hours (if applicable)
