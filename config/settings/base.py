@@ -56,6 +56,10 @@ LOCAL_APPS = [
     # custom users app
     'stla_lite.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'stla_lite.agencies.apps.AgenciesConfig'
+    , 'stla_lite.timesheets.apps.TimesheetsConfig'
+    , 'stla_lite.grants.apps.GrantsConfig'
+    , 'stla_lite.payperiods.apps.PayPeriodsConfig'
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

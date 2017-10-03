@@ -24,37 +24,41 @@ class Employee(User):
     """
     An Employee is a sub-class of user. Even if said employee never logs into this system, they'll still have a user representation here.
     """
-    job_title = models.CharField(_('Job Title')
+    job_title = models.CharField(
+        verbose_name='Job Title'
         , unique=False
         , blank=False
         , max_length=255
         )
-    employee_id_number = models.IntegerField(_('Employee ID Number')
+    employee_id_number = models.IntegerField(
+        verbose_name='Employee ID Number'
         , unique=True
         )
     supervisor_id = models.ForeignKey(
         'Supervisor'
         , on_delete=models.CASCADE
         )
-    emergency_contact_name=models.CharField(_('Emergency Contact Name')
+    emergency_contact_name=models.CharField(
+        verbose_name='Emergency Contact Name'
         , unique=False
         , blank=False
         , max_length=100
         )
-    emergency_contact_phone=models.CharField(_('Emergency Contact Number')
+    emergency_contact_phone=models.CharField(
+        verbose_name='Emergency Contact Number'
         , unique=False
         , blank=False
         , max_length=15 # Should be more scientific
                         # (i.e. 3-area code, 3-exchange,
                         # 4-zone), but 20 is fine for now.
         )
-    physical_working_location=models.CharField(_('Normal Physical Working Location')
-        """
-        Used to check for people during emergency situations.
-        """
+    physical_working_location=models.CharField(
+        # Used to check for people during emergency situations.
+        verbose_name='Normal Physical Working Location'
         , unique=False
         , blank=False
-        , max_length=100)
+        , max_length=100
+        )
     
     # Job Classification Designations
     COMPETITIVE = 'CC'

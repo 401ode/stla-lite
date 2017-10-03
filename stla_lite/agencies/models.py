@@ -36,7 +36,7 @@ class CostCenter(models.Model):
         )
     cost_center_name=models.CharField(
         verbose_name='Cost Center Name'
-        max_length=40
+        , max_length=40
         )
     cost_center_code=models.IntegerField(
         verbose_name='Cost Center Code' # RIFANS
