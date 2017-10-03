@@ -34,6 +34,11 @@ class Employee(User):
         verbose_name='Employee ID Number'
         , unique=True
         )
+    supervisor=models.OneToOneField(
+        'Employee'
+        , on_delete=models.CASCADE
+        , limit_choices_to={'is_supervisor': True}
+        )
     is_supervisor=models.BooleanField(
         default=False
         )
