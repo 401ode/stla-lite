@@ -2,7 +2,7 @@ from django.db import models
 from stla_lite.users.models import User, Employee, Supervisor
 from stla_lite.grants.models import GrantAward, GrantAwardTask
 from django.utils.encoding import python_2_unicode_compatible
-from stla_lite.payperiods import PayPeriod, Holiday
+from stla_lite.payperiods.models import PayPeriod, Holiday
 
 @python_2_unicode_compatible
 class Timesheet(models.Model):
