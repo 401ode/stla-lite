@@ -30,15 +30,17 @@ class Timesheet(models.Model):
         ("Timesheet Status")
         , choices=TIMESHEET_STATUSES
         , default=UNSUBMITTED
+        , max_length=30
         )
     
     employee=models.ForeignKey(Employee
         , on_delete=models.CASCADE
         )
-        
-    current_owner=models.ForeignKey(
-        Employee
-        )
+    
+    # TODO: Need to work out this key relationship.
+    # current_owner=models.ForeignKey(
+    #     Employee
+    #     )
     
     pay_period=models.ForeignKey(
         PayPeriod
@@ -119,6 +121,7 @@ class Activity(models.Model):
         verbose_name= 'Activity Category'
         , choices=CATEGORIES
         , default=REGULAR
+        , max_length=30
         )
     
     grant_award_id=models.ForeignKey(

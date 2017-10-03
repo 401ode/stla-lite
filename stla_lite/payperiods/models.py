@@ -23,7 +23,8 @@ class Holiday(models.Model):
     """
     holiday_date=models.DateField()
     holiday_name=models.CharField(
-        ('Holiday Name'))
+        verbose_name='Holiday Name'
+        , max_length=40)
         
     def __str__(self):
         return "{} - {}".format(self.holiday_name, self.holiday_date)

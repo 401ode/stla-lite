@@ -16,11 +16,13 @@ class GrantAward(models.Model):
     grant_award_id=models.CharField(
         verbose_name='Grant Award ID'
 	    , primary_key=True
+	    , max_length=40
 	)
     grant_award_description=models.CharField(
         verbose_name='Grant Award Description'
     	, unique=False
     	, blank=True
+    	, max_length=100
     	)
     grant_award_start_date=models.DateField(
         null=False
@@ -45,6 +47,7 @@ class GrantAwardTask(models.Model):
     grant_award_task_id=models.CharField(
         verbose_name='Grant Award Task ID'
     	, primary_key=True
+    	, max_length=40
     	)
     grant_award_id=models.ForeignKey(
         GrantAward
