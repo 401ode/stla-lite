@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
+from stla_lite.agencies.models import Agency
 
 @python_2_unicode_compatible
 class GrantAward(models.Model):
@@ -13,6 +14,11 @@ class GrantAward(models.Model):
     These objects should not be maintained manually in this system, but modified using
     the standard GMS process.
     """
+    agency_code=models.ForeignKey(
+        , Agency
+        , verbose_name='Agency to which this grant corresponds.'
+        , on_delete=models.CASCADE
+        )
     grant_award_id=models.CharField(
         verbose_name='Grant Award ID'
 	    , primary_key=True
@@ -65,3 +71,9 @@ class GrantAwardTask(models.Model):
     grant_award_task_end_date=models.DateField(
         null=False
     	)
+    percent_allotted=models.DecimalField(
+        verbose_name='What percentage of this task is taken up with existing allotments.'
+        , max_digits=5
+        , decimal_places=4
+        , default 0.00
+        )
