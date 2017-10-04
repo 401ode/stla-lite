@@ -42,9 +42,11 @@ class Employee(User):
     #     , on_delete=models.CASCADE
     #     , limit_choices_to={'is_supervisor': True}
     #     )
+
     is_supervisor=models.BooleanField(
         default=False
         )
+
     is_hr_staff=models.BooleanField(
         default=False
         )
@@ -55,6 +57,7 @@ class Employee(User):
         , blank=False
         , max_length=100
         )
+
     emergency_contact_phone=models.CharField(
         verbose_name='Emergency Contact Number'
         , unique=False

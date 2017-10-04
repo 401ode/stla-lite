@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}STLA Lite{% endblock title %}</title>
     {% block css %}
-    <link rel="stylesheet" href="{% static "css/uswds.min.css" %}"> {% endblock css %}
+    <link rel="stylesheet" href="{% static "css/uswds.min.css" %}"> 
+    {% endblock css %}
 </head>
 
 <body class="layout-demo">
@@ -30,16 +31,16 @@
                         <img class="usa-banner-icon usa-media_block-img" src="{% static " img/icon-dot-gov.svg " %}" alt="Dot gov">
                         <div class="usa-media_block-body">
                             <p>
-                                <strong>The .gov means it’s official.</strong>
-                                <br> Federal government websites always use a .gov or .mil domain. Before sharing sensitive information online, make sure you’re on a .gov or .mil site by inspecting your browser’s address (or “location”) bar.
+                                <strong>The ri.gov means it’s official.</strong>
+                                <br> RI government websites most often use a .gov or .mil domain (That's convincing, eh?). Before sharing sensitive information online, make sure you’re on a .gov or .mil site by inspecting your browser’s address (or “location”) bar.
                             </p>
                         </div>
                     </div>
                     <div class="usa-banner-guidance-ssl usa-width-one-half">
-                        <img class="usa-banner-icon usa-media_block-img" src="{% static " img/icon-https.svg " %}" alt="SSL">
+                        <img class="usa-banner-icon usa-media_block-img" src="{% static "img/icon-https.svg" %}" alt="SSL">
                         <div class="usa-media_block-body">
                             <p>This site is also protected by an SSL (Secure Sockets Layer) certificate that’s been signed by the U.S. government. The <strong>https://</strong> means all transmitted data is encrypted — in other words, any information or
-                                browsing history that you provide is transmitted securely.</p>
+                                browsing history that you provide is transmitted securely. This is patently untrue, just kidding. It will be, though.</p>
                         </div>
                     </div>
                 </div>
@@ -49,50 +50,21 @@
         <div class="usa-navbar">
             <button class="usa-menu-btn">Menu</button>
             <div class="usa-logo" id="logo">
+                                  <a href="{% url 'home' %}" accesskey="1" title="Home" aria-label="STLA Lite Home">
+                <img class="usa-logo" height=80 src="{% static "img/state-coa.png" %}" />
                 <em class="usa-logo-text">
-          <a href="#" accesskey="1" title="Home" aria-label="State Agency Name Home">STLA Lite</a>
-        </em>
+                      STLA Lite
+                </em>
+                  </a>
             </div>
         </div>
         <nav role="navigation" class="usa-nav">
             <div class="usa-nav-inner">
                 <button class="usa-nav-close">
-          <img src="{% static "img/close.svg" %}" alt="close">
+          <img src="{% static "img/close.svg" %}" alt="close" />
         </button>
                 <ul class="usa-nav-primary usa-accordion">
-                    <li>
-                        <button class="
-            usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="side-nav-1">
-              <span>Section title</span>
-            </button>
-                        <ul id="side-nav-1" class="usa-nav-submenu">
-                            <li>
-                                <a href="#">Page title</a>
-                            </li>
-                            <li>
-                                <a href="#">Page title</a>
-                            </li>
-                            <li>
-                                <a href="#">Page title</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="sidenav-2">
-              <span>Simple terms</span>
-            </button>
-                        <ul id="sidenav-2" class="usa-nav-submenu">
-                            <li>
-                                <a href="#">Page title</a>
-                            </li>
-                            <li>
-                                <a href="#">Page title</a>
-                            </li>
-                            <li>
-                                <a href="#">Page title</a>
-                            </li>
-                        </ul>
-                    </li>
+                    
                     <li>
                         <a class="usa-nav-link" href="{% url 'about' %}">
               <span>About STLA Lite</span>
@@ -141,10 +113,10 @@
                             <button class="usa-header-search-button js-search-button">Search</button>
                         </li>
                         <li>
-                            <a href="#">Secondary priority link</a>
+                            <a href="#">Timesheet Guidance</a>
                         </li>
                         <li>
-                            <a href="#">Easy to comprehend</a>
+                            <a href="#">Another Useful Link</a>
                         </li>
                     </ul>
                 </div>
@@ -185,7 +157,7 @@
         <div class="usa-footer-secondary_section">
             <div class="usa-grid">
                 <div class="usa-footer-logo usa-width-one-half">
-                    <img class="usa-footer-circle-124" src="{% static "img/logo-img.png" %}" alt="Logo image">
+                    <img class="usa-footer-circle-124" src="http://www.governor.ri.gov/assets/img/ri-cooler-warmer.png" alt="Logo image">
                     <h3 class="usa-footer-logo-heading">STLA Lite</h3>
                 </div>
                 <div class="usa-footer-contact-links usa-width-one-half">
@@ -202,9 +174,14 @@
             <span>RSS</span>
           </a>
                     <address>
-            <h3 class="usa-footer-contact-heading">Agency Contact Center</h3>
-            <p>(800) CALL-GOVT</p>
-            <a href="mailto:info@agency.gov">info@agency.gov</a>
+            <h3 class="usa-footer-contact-heading">State of Rhode Island</h3>
+            <p><script type="text/javascript">
+			  now=new Date();
+			  year=now.getFullYear(); 
+			 </script> 
+              &copy; <script type="text/javascript">document.write(year);</script> 
+              Department of Administration</p>
+            <a href="mailto:info@ode.ri.gov">info@ode.ri.gov</a>
           </address>
                 </div>
             </div>

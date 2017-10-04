@@ -15,7 +15,7 @@ class GrantAward(models.Model):
     the standard GMS process.
     """
     agency_code=models.ForeignKey(
-        , Agency
+        Agency
         , verbose_name='Agency to which this grant corresponds.'
         , on_delete=models.CASCADE
         )
@@ -55,25 +55,31 @@ class GrantAwardTask(models.Model):
     	, primary_key=True
     	, max_length=40
     	)
+    	
     grant_award_id=models.ForeignKey(
         GrantAward
         , on_delete=models.CASCADE
         )
+        
     grant_award_task_description=models.CharField(
         verbose_name='Grant Award Task Description'
     	, unique=False
     	, blank=True
     	, max_length=100
     	)
+    	
     grant_award_task_start_date=models.DateField(
         null=False
     	)
+    	
     grant_award_task_end_date=models.DateField(
         null=False
     	)
+    	
     percent_allotted=models.DecimalField(
         verbose_name='What percentage of this task is taken up with existing allotments.'
         , max_digits=5
         , decimal_places=4
-        , default 0.00
+        , default=0.00
         )
+    

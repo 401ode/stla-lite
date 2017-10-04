@@ -4,7 +4,7 @@ from django.db import models
 
 class Agency(models.Model):
     """
-    High-level Agency model. Now only with two fields.
+    High-level Agency model. Now only with three fields.
     """
     agency_name=models.CharField(
         verbose_name='Agency Name'
