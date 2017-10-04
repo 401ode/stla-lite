@@ -80,15 +80,15 @@ class Activity(models.Model):
     The actual hour breakdown of a timesheet, including its category, how much time was spent on a thing.
     Need to get actual payroll codes to plug in here.
     """
-    REGULAR='regular'
-    VACATION='vacation'
-    SICK='sick'
-    PERSONAL='personal'
-    BEREAVEMENT='bereavement'
-    HOLIDAY='holiday'
-    JURY_DUTY='jury_duty'
-    WORKERS_COMP='workers_comp'
-    UNION_DUTIES='union_duties'
+    REGULAR='X'
+    VACATION='V'
+    SICK='S'
+    PERSONAL='P'
+    BEREAVEMENT='B'
+    HOLIDAY='H'
+    JURY_DUTY='J'
+    WORKERS_COMP='W'
+    UNION_DUTIES='UB'
     TRAINING_CONF_SEM='training_conf_sem'
     OTHER='other'
     CATEGORIES=(
