@@ -1,5 +1,13 @@
 from django import forms
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, HTML
-from crispy_forms.bootstrap import FormActions
 from .models import User
+from allauth.account.forms import LoginForm, SignupForm
+
+class MyLoginForm(LoginForm):
+    def __init__(self, *args, **kwargs):
+        super(LoginForm, self).__init__(*args, **kwargs)
+        self.fields['remember'].label = 'Stay signed in'
+        self.fields['remember'].initial = True
+
+class MySignupForm(SignupForm):
+    def __init__(self, *args, **kwargs):
+        super(SignupForm, self).__init__(*args, **kwargs)
