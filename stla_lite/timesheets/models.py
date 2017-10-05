@@ -109,10 +109,44 @@ class Activity(models.Model):
         , on_delete=models.CASCADE
         )
     
-    activity_date=models.DateField()
+    sunday_hours=models.DecimalField(
+        verbose_name='Hours spent on this activity on Sunday'
+        , max_digits=3
+        , decimal_places=1
+        )
     
-    hours=models.DecimalField(
-        verbose_name='Hours spent on this activity'
+    monday_hours=models.DecimalField(
+        verbose_name='Hours spent on this activity on Monday'
+        , max_digits=3
+        , decimal_places=1
+        )
+    
+    tuesday_hours=models.DecimalField(
+        verbose_name='Hours spent on this activity on Tuesday'
+        , max_digits=3
+        , decimal_places=1
+        )
+    
+    wednesday_hours=models.DecimalField(
+        verbose_name='Hours spent on this activity on Wednesday'
+        , max_digits=3
+        , decimal_places=1
+        )
+        
+    thursday_hours=models.DecimalField(
+        verbose_name='Hours spent on this activity on Thursday'
+        , max_digits=3
+        , decimal_places=1
+        )
+    
+    friday_hours=models.DecimalField(
+        verbose_name='Hours spent on this activity on Friday'
+        , max_digits=3
+        , decimal_places=1
+        )
+        
+    saturday_hours=models.DecimalField(
+        verbose_name='Hours spent on this activity on Saturday'
         , max_digits=3
         , decimal_places=1
         )
